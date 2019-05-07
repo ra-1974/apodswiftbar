@@ -4,7 +4,7 @@ import base64
 with open("/tmp/temp.jpg", "rb") as image_file:
     encoded_string = str(base64.b64encode(image_file.read()))[2:][:-1]
 # print(encoded_string)
-print('Hello world')
+print('🔭')
 print('---')
 image_string = "image=" + encoded_string
-print("|image=" +  encoded_string)
+print("| href=# image=" +  encoded_string)
