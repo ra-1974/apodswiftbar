@@ -24,7 +24,6 @@
 import base64
 import urllib.request
 from PIL import Image
-import glob, os
 import io
 from io import BytesIO
 
