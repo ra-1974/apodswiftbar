@@ -5,4 +5,7 @@ found at https://apod.nasa.gov/apod/astropix.html.
 
 It requires python3, and [pillow](https://pypi.org/project/Pillow/).
 
-You can read more about it on my [blog post](https://jake.vossen.dev/blogs/apod-bitbar-announcment.html)
+You can read more about it on my [blog
+post](https://jake.vossen.dev/blogs/apod-bitbar-announcment.html)
+
+You can now download it right from the [BitBar plugins site](https://getbitbar.com/plugins/Science/apod.1h.py)
