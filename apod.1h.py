@@ -71,19 +71,14 @@ def random_date():
     # we need a URL like this: https://apod.nasa.gov/apod/ap250622.html
     return startingpoint + "ap" + random_date.strftime("%y%m%d") + ".html"
     
-
 print('🔭') 
 print('---')
-
-
 
 # The try block
 try:
     image_urls = create_list(startingpoint)
             
     # TODO: if there is not picture of the day available then choose a random one (but for this it would be nice to have the website parsing in a function)
-    # hack: we reset the list because it should then randomly choose one
-    #image_urls = []
     if not image_urls:
         image_urls = create_list(random_date())
         print("the urls found: ", image_urls)
@@ -107,23 +102,6 @@ try:
     # 1️⃣ Download image (only if it doesn't already exist)
     if not save_path.exists():
         urllib.request.urlretrieve(image_url, save_path)
-
-        # TODO: 2nd try with a random date like above
-        # try:
-        #     # Try the first URL
-        #     urllib.request.urlretrieve(first_url, save_path)
-        #     print(f"Downloaded successfully from first URL: {first_url}")
-        # except (HTTPError, URLError) as e:
-        #     print(f"Failed to download from first URL: {e}")
-            
-        #     # Generate or get the fallback URL
-        #     second_url = "https://example.com/image2.jpg"  # replace with your logic
-        #     try:
-        #         urllib.request.urlretrieve(second_url, save_path)
-        #         print(f"Downloaded successfully from second URL: {second_url}")
-        #     except (HTTPError, URLError) as e2:
-        #         # If the fallback also fails, raise an error
-        #         raise ValueError(f"Failed to download from both URLs. Last error: {e2}")
 
     # 2️⃣ Resize using macOS `sips` into a temp file
     with tempfile.NamedTemporaryFile(delete=False) as tmp_thumb:
